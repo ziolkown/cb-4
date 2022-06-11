@@ -82,9 +82,9 @@ Dabei ist im Prinzip fast alles erlaubt, nur die Sprache darf sich natürlich ni
 ### Folgende Anforderungen werden an Ihre Lösung gestellt:
 
 - die Implementation erfolgt in der Datei minako-syntax.y 
-- der Parser gibt im erfolgreichen Fall nichts aus und beendet sich mit dem Rückgabewert 0 
-- bei einem Parserfehler wird eine Fehlermeldung (beendet durch ein Newline) ausgegeben und das Programm mit einem Rückgabewert != 0 beendet 
-- wenn Sie den Parser auf das mitgelieferte C1-Programm demorgan.c1 ansetzen, sollte er entsprechend nichts ausgeben und sich mit Rückgabewert 0 beenden 
+- der Parser gibt im erfolgreichen Fall nichts aus
+- bei einem Parserfehler wird eine Fehlermeldung ausgegeben und das Programm mit der Rückgabe des Fehlers beendet 
+- wenn Sie den Parser mithilfe der Tests auf das mitgelieferte C1-Programm demorgan.c1 ansetzen, sollte er entsprechend nichts ausgeben und alle Tests erfolgreich durchlaufen 
 - die Verwendung von %expect x für x > 0 im Bison-Code ist nicht gestattet
 
 ### Zur Hilfestellung seien noch folgende Hinweise gegeben:

@@ -17,7 +17,7 @@ Zur Lösung der Aufgaben steht für Sie dieses Repository mit
 
 zur Verfügung.
 
-## Aufgabenstellung
+## Aufgabenstellung (100 Punkte)
 Der von uns verwendete Parsergenerator *bison* sollte Ihnen bereits aus der Übung bekannt sein. Da Materialien zu Bison (Handbücher, Tutorials, …) sehr zahlreich im Netz vorhanden sind, wird hier auf eine weitere Erklärung verzichtet.
 
 Ihre Aufgabe besteht darin, einen Parser für die Sprache C1 zu erstellen. Dazu bekommen Sie von uns einen Lexer. (Sie können theoretisch auch Ihren Scanner vom Aufgabenblatt 2 benutzen – aber dessen Integration in den Parser erfordert etwas Aufwand)

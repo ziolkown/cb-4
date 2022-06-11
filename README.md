@@ -10,7 +10,6 @@ Die Lösung ist in einem eigenen Git-Repository abzugeben.
 Sie können in ihrer Lösung beliebige Hilfstypen und Module selbst definieren, jedoch dürfen die vorhandenen Testfälle nicht abgeändert werden.
 
 Zur Lösung der Aufgaben steht für Sie dieses Repository mit
-- mit einem vorgegeben Makefile,
 - einer Testdatei [demorgan](src/parser/demorgan.c1),
 - einem Lexer in [minako-lexic](src/parser/lexer.rs)
 - einem Parser-Template in [minako-syntax](src/parser/minako_syntax.y)

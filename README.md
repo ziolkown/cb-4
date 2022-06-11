@@ -20,6 +20,8 @@ zur Verfügung.
 ## Aufgabenstellung (100 Punkte)
 Der von uns verwendete Parsergenerator *bison* sollte Ihnen bereits aus der Übung bekannt sein. Da Materialien zu Bison (Handbücher, Tutorials, …) sehr zahlreich im Netz vorhanden sind, wird hier auf eine weitere Erklärung verzichtet.
 
+Für Rust bietet die [rust-bison-skeleton](https://crates.io/crates/rust-bison-skeleton) crate ein Bison frontend an, welches Parser in Rust generiert. Nähere Informationen finden Sie in der README der crate, und in der Vorbesprechung des Übungsblatts. 
+
 Ihre Aufgabe besteht darin, einen Parser für die Sprache C1 zu erstellen. Dazu bekommen Sie von uns einen Lexer. (Sie können theoretisch auch Ihren Scanner vom Aufgabenblatt 2 benutzen – aber dessen Integration in den Parser erfordert etwas Aufwand)
 
 Die Grammatik von C1 finden Sie [hier](https://amor.cms.hu-berlin.de/~kunert/lehre/material/c1-grammar.php) sowie nachfolgend:

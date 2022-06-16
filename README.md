@@ -11,7 +11,7 @@ Sie können in ihrer Lösung beliebige Hilfstypen und Module selbst definieren, 
 
 Zur Lösung der Aufgaben steht für Sie dieses Repository mit
 - einer Testdatei [demorgan](src/parser/demorgan.c1),
-- einem Lexer in [minako-lexic](src/parser/lexer.rs)
+- einem Lexer in [lexer](src/parser/lexer.rs)
 - einem Parser-Template in [minako-syntax](src/parser/minako_syntax.y)
 
 zur Verfügung.

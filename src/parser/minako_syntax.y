@@ -57,11 +57,318 @@
 %%
 
 program:
-	// empty
-	{
+    %empty
+        {
+            $$ = Value::None;
+        }
+    | program declassignment ';'
+        {
+            $$ = Value::None;
+        }
+    | program functiondefinition
+        {
             $$ = Value::None;
         }
 
+functiondefinition:
+    type ID '(' ')' '{' statementlist '}'
+        {
+            $$ = Value::None;
+        }
+    | type ID '(' parameterlist ')' '{' statementlist '}'
+        {
+            $$ = Value::None;
+        }
+
+parameterlist:
+    type ID
+        {
+            $$ = Value::None;
+        }
+    | parameterlist ',' type ID
+        {
+            $$ = Value::None;
+        }
+
+functioncall:
+    ID '(' ')'
+    	{
+                $$ = Value::None;
+        }
+    | ID '(' assignment_in_functioncall ')'
+    	{
+                $$ = Value::None;
+        }
+
+assignment_in_functioncall:
+    assignment
+    	{
+                $$ = Value::None;
+        }
+    | assignment_in_functioncall ',' assignment
+    	{
+                $$ = Value::None;
+        }
+
+statementlist:
+    %empty
+    	{
+                $$ = Value::None;
+        }
+    | statementlist block
+    	{
+                $$ = Value::None;
+        }
+
+block:
+    '{' statementlist '}'
+    	{
+                $$ = Value::None;
+        }
+    | statement
+    	{
+                $$ = Value::None;
+        }
+
+statement:
+    ifstatement
+    	{
+                $$ = Value::None;
+        }
+    | forstatement
+    	{
+                $$ = Value::None;
+        }
+    | whilestatement
+    	{
+                $$ = Value::None;
+        }
+    | returnstatement ';'
+    	{
+                $$ = Value::None;
+        }
+    | dowhilestatement ';'
+    	{
+                $$ = Value::None;
+        }
+    | printf ';'
+    	{
+                $$ = Value::None;
+        }
+    | declassignment ';'
+    	{
+                $$ = Value::None;
+        }
+    | statassignment ';'
+    	{
+                $$ = Value::None;
+        }
+    | functioncall ';'
+    	{
+                $$ = Value::None;
+        }
+
+statblock:
+    '{' statementlist '}'
+    	{
+                $$ = Value::None;
+        }
+    | statement
+    	{
+                $$ = Value::None;
+        }
+
+ifstatement:
+    KW_IF '(' assignment ')' statblock %prec LOWER_THAN_ELSE
+    	{
+                $$ = Value::None;
+        }
+    | KW_IF '(' assignment ')' statblock KW_ELSE statblock %prec KW_ELSE
+    	{
+                $$ = Value::None;
+        }
+
+forstatement:
+    KW_FOR '(' statassignment ';' expr ';' statassignment ')' statblock
+    	{
+                $$ = Value::None;
+        }
+    | KW_FOR '(' declassignment ';' expr ';' statassignment ')' statblock
+    	{
+                $$ = Value::None;
+        }
+
+dowhilestatement:
+    KW_DO statblock KW_WHILE '(' assignment ')'
+    	{
+                $$ = Value::None;
+        }
+
+whilestatement:
+    KW_WHILE '(' assignment ')' statblock
+    	{
+                $$ = Value::None;
+        }
+
+returnstatement:
+    KW_RETURN
+    	{
+                $$ = Value::None;
+        }
+    | KW_RETURN assignment
+    	{
+                $$ = Value::None;
+        }
+
+printf:
+    KW_PRINTF '(' assignment ')'
+    	{
+                $$ = Value::None;
+        }
+    | KW_PRINTF '(' CONST_STRING ')'
+    	{
+                $$ = Value::None;
+        }
+
+declassignment:
+    type ID
+    	{
+                $$ = Value::None;
+        }
+    | type ID '=' assignment
+    	{
+                $$ = Value::None;
+        }
+
+statassignment:
+    ID '=' assignment
+    	{
+                $$ = Value::None;
+        }
+
+assignment:
+    expr
+    	{
+                $$ = Value::None;
+        }
+    | ID '=' assignment
+    	{
+                $$ = Value::None;
+        }
+
+expr:
+    simpexpr
+    	{
+                $$ = Value::None;
+        }
+    | simpexpr EQ simpexpr
+    	{
+                $$ = Value::None;
+        }
+    | simpexpr NEQ simpexpr
+    	{
+                $$ = Value::None;
+        }
+    | simpexpr LEQ simpexpr
+    	{
+                $$ = Value::None;
+        }
+    | simpexpr GEQ simpexpr
+    	{
+                $$ = Value::None;
+        }
+    | simpexpr LSS simpexpr
+    	{
+                $$ = Value::None;
+        }
+    | simpexpr GRT simpexpr
+    	{
+                $$ = Value::None;
+        }
+
+simpexpr:
+    term
+    	{
+                $$ = Value::None;
+        }
+    | term '+' term
+    	{
+                $$ = Value::None;
+        }
+    | term '-' term
+    	{
+                $$ = Value::None;
+        }
+    | term OR term
+    	{
+                $$ = Value::None;
+        }
+    | '-' term %prec UMINUS
+    	{
+                $$ = Value::None;
+        }
+
+term:
+    factor
+    	{
+                $$ = Value::None;
+        }
+    | factor '*' factor
+    	{
+                $$ = Value::None;
+        }
+    | factor '/' factor
+    	{
+                $$ = Value::None;
+        }
+    | factor AND factor
+    	{
+                $$ = Value::None;
+        }
+
+factor:
+    CONST_INT
+    	{
+                $$ = Value::None;
+        }
+    | CONST_FLOAT
+    	{
+                $$ = Value::None;
+        }
+    | CONST_BOOLEAN
+    	{
+                $$ = Value::None;
+        }
+    | functioncall
+    	{
+                $$ = Value::None;
+        }
+    | ID
+    	{
+                $$ = Value::None;
+        }
+    | '(' assignment ')'
+    	{
+                $$ = Value::None;
+        }
+
+type:
+    KW_BOOLEAN
+    	{
+                $$ = Value::None;
+        }
+    | KW_FLOAT
+    	{
+                $$ = Value::None;
+        }
+    | KW_INT
+    	{
+                $$ = Value::None;
+        }
+    | KW_VOID
+    	{
+                $$ = Value::None;
+        }
 
 %%
 
